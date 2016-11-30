@@ -18,12 +18,18 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'devise'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'slim-rails'
+gem 'i18n-tasks', '~> 0.9.6'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'guard-rspec'
   gem 'spring-commands-rspec'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -31,15 +37,19 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
+  gem 'rb-fsevent', require: false
 end
 
 group :test do
-  gem 'faker'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers', require: false
+  gem 'shoulda-callback-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

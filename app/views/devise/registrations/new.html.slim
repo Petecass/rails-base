@@ -1,0 +1,33 @@
+
+.ui.raised.very.padded.text.container.segment
+  h2
+    = t('.sign_up')
+    
+  = form_for(resource, as: resource_name, 
+                       url: registration_path(resource_name), 
+                       html: { class: 'ui form'}) do |f|
+                       
+    = devise_error_messages!
+    
+    .field
+      = f.label :email
+      br
+      = f.email_field :email, autofocus: true
+      
+    .field
+      = f.label :password
+      - if @minimum_password_length
+        em
+          = t('.minimum_password_length', length: @minimum_password_length)
+      br
+      = f.password_field :password, autocomplete: 'off'
+      
+    .field
+      = f.label :password_confirmation
+      br
+      = f.password_field :password_confirmation, autocomplete: 'off'
+      
+    .actions
+      = f.submit t('.submit_button'), class: 'ui button primary'
+      
+  = render 'devise/shared/links'
