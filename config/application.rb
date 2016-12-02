@@ -6,8 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-
-
 module Cable
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -23,5 +21,12 @@ module Cable
         request_specs: false
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
+
+    # I18n configuration
+    config.i18n.fallbacks = true
+    config.i18n.load_path += Dir[Rails.root.join('config',
+                                                 'locales',
+                                                 '**',
+                                                 '*.{rb,yml}')]
   end
 end

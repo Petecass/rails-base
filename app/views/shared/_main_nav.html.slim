@@ -1,0 +1,16 @@
+.ui.container
+  .ui.secondary.pointing.menu
+    = main_nav_link(t('.home'), root_path)
+      
+    .right.menu
+      - if current_user
+        = main_nav_link(t('.logout'), 
+                        destroy_user_session_path, 
+                        { method: :delete })
+          
+      - else 
+        = main_nav_link(t('.login'), new_user_session_path)
+
+        = main_nav_link(t('.signup'), new_user_registration_path)
+      
+

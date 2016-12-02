@@ -1,3 +1,7 @@
-h2 This is the home page
+h2.ui.center.aligned.icon.header
+  i.circular.users.icon
+  Friends
 
-= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg'
+  = link_to t('.register'), 
+            new_user_registration_path, 
+            class: 'ui button primary large'

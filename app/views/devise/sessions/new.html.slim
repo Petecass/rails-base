@@ -1,25 +1,27 @@
-h2
-  = t('.log_in')
-  
-= form_for(resource, as: resource_name, 
-                     url: session_path(resource_name), 
-                     html: { class: 'ui form' }) do |f|
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true
+.ui.raised.very.padded.text.container.segment
+  h2
+    = t('.log_in')
     
-  .field
-    = f.label :password
-    br
-    = f.password_field :password, autocomplete: 'off'
-    
-  - if devise_mapping.rememberable?
+  = form_for(resource, as: resource_name, 
+                       url: session_path(resource_name), 
+                       html: { class: 'ui form' }) do |f|
     .field
-      = f.check_box :remember_me
-      = f.label :remember_me
+      = f.label :email
+      br
+      = f.email_field :email, autofocus: true
       
-  .actions
-    = f.submit t('.submit_button'), class: 'ui button primary'
-    
-= render 'devise/shared/links'
+    .field
+      = f.label :password
+      br
+      = f.password_field :password, autocomplete: 'off'
+      
+    - if devise_mapping.rememberable?
+      .field
+        .ui.checkbox
+          = f.check_box :remember_me, class: 'hidden', tabIndex: '0'
+          = f.label :remember_me
+        
+    .actions
+      = f.submit t('.submit_button'), class: 'ui button primary'
+      
+  = render 'devise/shared/links'

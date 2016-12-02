@@ -1,2 +1,15 @@
 ---
-en: {}
+en:
+  meta:
+    default:
+      site: Coruscant
+      description: R2-D2, you know better than to trust a strange computer!
+  shared:
+    main_nav:
+      home: Home
+      login: Login
+      logout: Logout
+      signup: Signup
+  static_pages:
+    index:
+      register: Register

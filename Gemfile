@@ -6,12 +6,13 @@ gem 'sqlite3'
 
 gem 'puma', '~> 3.0'
 
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
+# gem 'sass-rails', '~> 5.0'
+gem 'sassc-rails',  '~> 1.3.0'
+gem 'uglifier',     '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
+gem 'turbolinks',   '~> 5'
+gem 'jbuilder',     '~> 2.5'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -22,6 +23,7 @@ gem 'devise'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'slim-rails'
 gem 'i18n-tasks', '~> 0.9.6'
+gem 'meta-tags', '~> 2.3.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -30,6 +32,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'spring-commands-rspec'
   gem 'dotenv-rails'
+  gem 'faker', '~>1.6.6'
 end
 
 group :development do

@@ -18,7 +18,7 @@ data:
     # Default:
     - config/locales/%{locale}.yml
     # More files:
-    - config/locales/**/*.%{locale}.yml
+    - config/locales/**/%{locale}.yml
     ## Another gem (replace %#= with %=):
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
 
@@ -26,7 +26,7 @@ data:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
   write:
     ## For example, write devise and simple form keys to their respective files:
-    - ['{devise, simple_form}.*', 'config/locales/\1.%{locale}.yml']
+    # - ['{devise, simple_form}.*', 'config/locales/\1.%{locale}.yml']
     ## Catch-all default:
     # - config/locales/%{locale}.yml
 

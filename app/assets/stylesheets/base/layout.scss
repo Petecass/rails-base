@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  min-height: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main_content {
+  flex: 1 0 0;
+}
+
+.main_footer {
+  min-height: 6rem;
+  background-color: #fafafa;
+}

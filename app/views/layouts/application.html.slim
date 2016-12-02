@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    = csrf_meta_tags
+    = display_meta_tags(default_meta_tags)
+    
+    / Default Favicon icon links
+    / These were generated at http://realfavicongenerator.net/ You should do the
+    / upload your new favicons to the public assets folder.
+    <link href='/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180' />
+    <link href='/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png' />
+    <link href='/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png' />
+    <link href='/manifest.json' rel='manifest' />
+    <link color='#5bbad5' href='/safari-pinned-tab.svg' rel='mask-icon' />
+    <meta content='#ffffff' name='theme-color' />
+    
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    
+  body
+    = render 'shared/main_nav'
+    main.main_content
+      = yield
+    = render 'shared/main_footer'
