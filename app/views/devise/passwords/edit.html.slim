@@ -4,7 +4,8 @@
     
   = form_for(resource, as: resource_name, 
                        url: password_path(resource_name), 
-                       html: { method: :put, class: 'ui form' }) do |f|
+                       html: { method: :put, 
+                               class: 'ui form attached segment' }) do |f|
                        
     = devise_error_messages!
     
@@ -26,5 +27,6 @@
       
     .actions
       = f.submit t('.submit_button'), class: 'ui button primary'
-      
-  = render 'devise/shared/links'
+  
+  .ui.bottom.attached.warning.message
+    = render 'devise/shared/links'

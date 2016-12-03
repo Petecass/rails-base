@@ -1,10 +1,12 @@
+
 .ui.raised.very.padded.text.container.segment
+
   h2
     = t('.log_in')
     
   = form_for(resource, as: resource_name, 
                        url: session_path(resource_name), 
-                       html: { class: 'ui form' }) do |f|
+                       html: { class: 'ui form attached segment' }) do |f|
     .field
       = f.label :email
       br
@@ -23,5 +25,6 @@
         
     .actions
       = f.submit t('.submit_button'), class: 'ui button primary'
-      
-  = render 'devise/shared/links'
+  
+  .ui.bottom.attached.warning.message
+    = render 'devise/shared/links'
