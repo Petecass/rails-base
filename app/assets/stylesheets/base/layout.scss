@@ -5,11 +5,15 @@ body {
   flex-direction: column;
 }
 
-.main_content {
+.main-content {
   flex: 1 0 0;
 }
 
-.main_footer {
+.main-content--padded {
+  padding: 2rem 0;
+}
+
+.main-footer {
   min-height: 6rem;
   background-color: #fafafa;
 }

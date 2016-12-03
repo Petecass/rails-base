@@ -19,6 +19,9 @@ html
     
   body
     = render 'shared/main_nav'
-    main.main_content
+    = render 'shared/flash_messages'
+    
+    main.main-content
       = yield
+      
     = render 'shared/main_footer'
