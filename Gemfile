@@ -20,6 +20,16 @@ gem 'jbuilder',     '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
+gem 'omniauth'
+# Choose your Oauth provider(s), You will need add the key and secret to
+# config/initializers/devise.rb and also add the provider to the omniauthable
+# array on the user model
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+# gem 'omniauth-github'
+# gem 'omniauth-twitter'
+# gem 'omniauth-linkedin'
+
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'slim-rails'
 gem 'i18n-tasks', '~> 0.9.6'
@@ -51,7 +61,7 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'rails-controller-testing'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers'
   gem 'shoulda-callback-matchers'
 end
 

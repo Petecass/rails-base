@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   # # Overide default devise controllers
-  # devise_for :users, controllers: { registrations: 'registrations',
-  #                                   sessions: 'sessions',
-  #                                   confirmations: 'confirmations',
-  #                                   unlocks: 'unlocks' }
+  devise_for :users, controllers: {
+                                      # registrations: 'users/registrations',
+                                      # sessions: 'users/sessions',
+                                      # confirmations: 'users/confirmations',
+                                      # unlocks: 'users/unlocks',
+                                      omniauth_callbacks: 'users/omniauth_callbacks'
+                                     }
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], as: :finish_signup
 
   root 'static_pages#index'
 end
