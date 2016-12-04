@@ -6,10 +6,8 @@ RSpec.describe User, type: :model do
   end
 
   describe 'ActiveModel validations' do
-    subject { build(:identity) }
-    # it { is_expected.to validate_presence_of(:uid) }
-    # it { is_expected.to validate_presence_of(:provider) }
-    # it { is_expected.to validate_uniqueness_of(:uid).scoped_to(:provider) }
+    subject { build(:user) }
+    it { is_expected.to validate_presence_of(:email) }
   end
 
   describe 'ActiveRecord associations' do
@@ -19,19 +17,14 @@ RSpec.describe User, type: :model do
 
   describe 'class methods' do
     context '.find_for_oauth' do
-      let(:auth) { double }
-      before do
-        allow(auth).to receive(:uid).and_return('123')
-        allow(auth).to receive(:provider).and_return('facebook')
-        allow(auth).to receive_message_chain(:info, :email)
-        allow(auth).to receive_message_chain(:extra, :raw_info, :name)
-      end
+      let(:auth) { mock_auth_hash }
 
       context 'when identity exists' do
         let!(:user) { create(:user) }
-        let!(:identity) { create(:identity, uid: '123',
+        let!(:identity) { create(:identity, uid: '123545',
                                             provider: 'facebook',
                                             user: user) }
+
         it 'finds the user' do
           expect(described_class.find_for_oauth(auth, nil)).to eq user
         end
@@ -39,9 +32,7 @@ RSpec.describe User, type: :model do
 
       context 'when user is present' do
         let!(:user) { create(:user) }
-        let!(:identity) { create(:identity, uid: '123',
-                                            provider: 'facebook',
-                                            user: user) }
+
         it 'finds the user' do
           expect(described_class.find_for_oauth(auth, user)).to eq user
         end
@@ -52,6 +43,7 @@ RSpec.describe User, type: :model do
         let!(:identity) { create(:identity, uid: '4321',
                                             provider: 'twitter',
                                             user: user) }
+
         it 'creates the identity' do
           expect {
             described_class.find_for_oauth(auth, user)
@@ -62,12 +54,16 @@ RSpec.describe User, type: :model do
       end
 
       context 'when neither user nor identity exist' do
+        let(:user) { User.last }
+
         it 'creates the user' do
           expect {
             described_class.find_for_oauth(auth, nil)
           }.to change {
             User.count
           }.by(1)
+          expect(user.name).to eq('Han Solo')
+          expect(user.encrypted_password).to be_present
         end
       end
     end

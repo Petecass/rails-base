@@ -49,7 +49,7 @@ class User < ApplicationRecord
       email = auth_email(auth)
 
       user = User.find_or_initialize_by(email: email) do |user|
-        user.name = auth.extra.raw_info.name,
+        user.name = auth.extra.raw_info.name
         user.password = Devise.friendly_token[0,20]
       end
 
