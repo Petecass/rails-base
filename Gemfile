@@ -31,6 +31,7 @@ gem 'omniauth-google-oauth2'
 # gem 'omniauth-linkedin'
 
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'autoprefixer-rails'
 gem 'slim-rails'
 gem 'i18n-tasks', '~> 0.9.6'
 gem 'meta-tags', '~> 2.3.1'

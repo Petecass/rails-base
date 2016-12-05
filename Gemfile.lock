@@ -48,6 +48,9 @@ GEM
     addressable (2.4.0)
     arel (7.1.4)
     ast (2.3.0)
+    autoprefixer-rails (6.3.1)
+      execjs
+      json
     bcrypt (3.1.11)
     builder (3.2.2)
     byebug (9.0.6)
@@ -342,6 +345,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   byebug
   capybara
   coffee-rails (~> 4.2)
