@@ -16,4 +16,16 @@ module ApplicationHelper
       reverse: true,
       charset: "utf-8" }
   end
+
+  def omniauth_button(provider, resource_name)
+    provider_name = provider.downcase.to_s.split('_')[0]
+    options = {
+      class: "#{provider_name} ui button plus fluid"
+    }
+
+    link_to(omniauth_authorize_path(resource_name, provider), options) do
+      "#{content_tag(:i, "", class: "#{provider_name} plus icon")}
+        #{provider_name.capitalize}".html_safe
+    end
+  end
 end
