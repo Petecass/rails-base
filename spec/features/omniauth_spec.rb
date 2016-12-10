@@ -15,7 +15,7 @@ feature 'Facebook sign up' do
       it 'creates the user' do
         mock_auth_hash
         expect {
-          click_on('Sign in with Facebook')
+          find('#facebookButton').click
         }.to change {
           User.count
         }.by 1
@@ -32,7 +32,7 @@ feature 'Facebook sign up' do
 
       it 'creates the user' do
         expect {
-          click_on('Sign in with Facebook')
+          find('#facebookButton').click
         }.to change {
           User.count
         }.by 1
@@ -40,7 +40,7 @@ feature 'Facebook sign up' do
       end
 
       it 'asks for an email address' do
-        click_on('Sign in with Facebook')
+        find('#facebookButton').click
         expect(current_path).to eq finish_signup_path(user)
         expect(page.body).to have_content('Add Email')
 
@@ -59,7 +59,7 @@ feature 'Facebook sign up' do
           before(:each) do
             create(:user, email: new_email)
             mock_auth_hash(email = false)
-            click_on('Sign in with Facebook')
+            find('#facebookButton').click
             fill_in 'user_email', with: new_email
             submit
           end
