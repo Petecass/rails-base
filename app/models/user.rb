@@ -36,7 +36,7 @@ class User < ApplicationRecord
 
   private
 
-    def associate_identity(identity, user)
+    def self.associate_identity(identity, user)
       return unless identity.user != user
       identity.user = user
       identity.save!
