@@ -44,6 +44,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'dotenv-rails'
   gem 'faker', '~>1.6.6'
+  gem 'rubocop'
 end
 
 group :development do
@@ -63,7 +64,7 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'rails-controller-testing'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
   gem 'shoulda-callback-matchers'
 end
 
