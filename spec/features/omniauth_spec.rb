@@ -1,7 +1,7 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 feature 'Facebook sign up' do
-
   OmniAuth.config.test_mode = true
   let(:user) { User.last }
 
@@ -14,9 +14,9 @@ feature 'Facebook sign up' do
     context 'when email is present' do
       it 'creates the user' do
         mock_auth_hash
-        expect {
+        expect do
           find('#facebookButton').click
-        }.to change {
+        end.to change {
           User.count
         }.by 1
 
@@ -27,13 +27,13 @@ feature 'Facebook sign up' do
     context 'when email is not present' do
       let(:new_email) { 'chewy@wookie.com' }
       before(:each) do
-        mock_auth_hash(email = false)
+        mock_auth_hash(false)
       end
 
       it 'creates the user' do
-        expect {
+        expect do
           find('#facebookButton').click
-        }.to change {
+        end.to change {
           User.count
         }.by 1
         expect(user.email).to match(/change@me/)
@@ -58,7 +58,7 @@ feature 'Facebook sign up' do
 
           before(:each) do
             create(:user, email: new_email)
-            mock_auth_hash(email = false)
+            mock_auth_hash(false)
             find('#facebookButton').click
             fill_in 'user_email', with: new_email
             submit

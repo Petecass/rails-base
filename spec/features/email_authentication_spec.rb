@@ -1,7 +1,7 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 feature 'Email authentication', type: :feature do
-
   context 'regular sign up path' do
     let(:user_email) { 'chewy@therepublic.com' }
     let(:user_password) { 'password' }

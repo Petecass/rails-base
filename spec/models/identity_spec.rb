@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.describe Identity, type: :model do
@@ -34,9 +35,9 @@ RSpec.describe Identity, type: :model do
 
       context 'when does not exist' do
         it 'creates an identity' do
-          expect {
+          expect do
             described_class.find_for_oauth(auth)
-          }.to change {
+          end.to change {
             Identity.count
           }.by(1)
         end

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class UsersController < ApplicationController
   before_action :set_user
 
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
   # GET/PATCH /users/:id/finish_signup
   def finish_signup
     # authorize! :update, @user
-    if request.patch? && params[:user] #&& params[:user][:email]
+    if request.patch? && params[:user] # && params[:user][:email]
       if @user.update(user_params)
         @user.skip_reconfirmation! if @user.respond_to?(:skip_confirmation)
         bypass_sign_in(@user)
@@ -51,13 +52,14 @@ class UsersController < ApplicationController
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    def user_params
-      accessible = [ :name, :email ] # extend with your own params
-      accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
-      params.require(:user).permit(accessible)
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    accessible = [:name, :email] # extend with your own params
+    accessible << [:password, :password_confirmation] unless params[:user][:password].blank?
+    params.require(:user).permit(accessible)
+  end
 end

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # For use in integration tests. Provides a mock OmniAuth hash
 module OmniauthMacros
   def mock_auth_hash(email = true)

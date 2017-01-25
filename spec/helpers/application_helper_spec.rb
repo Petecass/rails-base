@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 describe ApplicationHelper do
@@ -5,14 +6,14 @@ describe ApplicationHelper do
     context 'with no default options' do
       subject { helper.main_nav_link('hello', root_path) }
       it 'returns a nav link' do
-        expect(subject).to eq "<a class=\"item \" href=\"/\">hello</a>"
+        expect(subject).to eq '<a class="item " href="/">hello</a>'
       end
     end
 
     context 'with extra options' do
-      subject { helper.main_nav_link('hello', root_path, { method: :delete}) }
+      subject { helper.main_nav_link('hello', root_path, method: :delete) }
       it 'returns a nav link with extra data' do
-        expect(subject).to eq "<a class=\"item \" rel=\"nofollow\" data-method=\"delete\" href=\"/\">hello</a>"
+        expect(subject).to eq '<a class="item " rel="nofollow" data-method="delete" href="/">hello</a>'
       end
     end
   end

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -21,9 +22,11 @@ RSpec.describe User, type: :model do
 
       context 'when identity exists' do
         let!(:user) { create(:user) }
-        let!(:identity) { create(:identity, uid: '123545',
-                                            provider: 'facebook',
-                                            user: user) }
+        let!(:identity) do
+          create(:identity, uid: '123545',
+                            provider: 'facebook',
+                            user: user)
+        end
 
         it 'finds the user' do
           expect(described_class.find_for_oauth(auth, nil)).to eq user
@@ -40,14 +43,16 @@ RSpec.describe User, type: :model do
 
       context 'when associating another identity' do
         let!(:user) { create(:user) }
-        let!(:identity) { create(:identity, uid: '4321',
-                                            provider: 'twitter',
-                                            user: user) }
+        let!(:identity) do
+          create(:identity, uid: '4321',
+                            provider: 'twitter',
+                            user: user)
+        end
 
         it 'creates the identity' do
-          expect {
+          expect do
             described_class.find_for_oauth(auth, user)
-          }.to change {
+          end.to change {
             user.identities.count
           }.by(1)
         end
@@ -57,9 +62,9 @@ RSpec.describe User, type: :model do
         let(:user) { User.last }
 
         it 'creates the user' do
-          expect {
+          expect do
             described_class.find_for_oauth(auth, nil)
-          }.to change {
+          end.to change {
             User.count
           }.by(1)
           expect(user.name).to eq('Han Solo')

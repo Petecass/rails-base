@@ -1,5 +1,5 @@
+# frozen_string_literal: true
 module ApplicationHelper
-
   ##
   # Creates a styled link for use in a navbar
   # Adds a class of active if the current path is equal to the links path
@@ -18,12 +18,12 @@ module ApplicationHelper
   ##
   # Creates a hash of default meta tags.
   # Used as an argument for display_meta_tags
-  def default_meta_tags(options = {})
+  def default_meta_tags(_options = {})
     { site: t('meta.default.site'),
       description: t('meta.default.description'),
-      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
       reverse: true,
-      charset: "utf-8" }
+      charset: 'utf-8' }
   end
 
   ##
@@ -41,8 +41,8 @@ module ApplicationHelper
     }
 
     link_to(omniauth_authorize_path(resource_name, provider), options) do
-      "#{content_tag(:i, "", class: "#{provider_name} plus icon")}
-        #{provider_name.capitalize}".html_safe
+      "#{content_tag(:i, '', class: "#{provider_name} plus icon")}
+        #{provider_name.capitalize}"
     end
   end
 end
