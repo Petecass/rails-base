@@ -31,8 +31,8 @@ gem 'omniauth-google-oauth2'
 # gem 'omniauth-linkedin'
 
 gem 'autoprefixer-rails', '6.5.3'
-gem 'i18n-tasks', '~> 0.9.6'
-gem 'meta-tags', '~> 2.3.1'
+gem 'i18n-tasks',         '~> 0.9.6'
+gem 'meta-tags',          '~> 2.3.1'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'slim-rails'
 
@@ -59,6 +59,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'rails-controller-testing'
@@ -66,7 +67,6 @@ group :test do
   gem 'shoulda-callback-matchers'
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
-  gem 'codeclimate-test-reporter', '~> 1.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
