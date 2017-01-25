@@ -1,4 +1,4 @@
-inherit_from: .rubocop_todo.yml
+
 # Settings taken directly from https://raw.githubusercontent.com/houndci/hound/master/.ruby-style.yml
 AllCops:
   Include:
