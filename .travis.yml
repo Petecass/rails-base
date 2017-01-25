@@ -5,6 +5,8 @@ script:
   - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec spec
   - bundle exec rake rubocop
+after_success:
+  - bundle exec codeclimate-test-reporter
 addons:
     code_climate:
-        repo_token: ac0484ade67f1bafa01d0ec4c8e5a3633d4fb633ca71062cf344c4f01da9319d
+      repo_token: ac0484ade67f1bafa01d0ec4c8e5a3633d4fb633ca71062cf344c4f01da9319d
