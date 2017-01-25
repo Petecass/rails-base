@@ -38,13 +38,13 @@ gem 'meta-tags', '~> 2.3.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  gem 'guard-rspec'
-  gem 'spring-commands-rspec'
   gem 'dotenv-rails'
+  gem 'factory_girl_rails'
   gem 'faker', '~>1.6.6'
-  gem 'rubocop'
+  gem 'guard-rspec'
+  gem 'rspec-rails'
+  gem 'rubocop', require: false
+  gem 'spring-commands-rspec'
 end
 
 group :development do
