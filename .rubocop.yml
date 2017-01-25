@@ -1,3 +1,4 @@
+inherit_from: .rubocop_todo.yml
 AllCops:
   Include:
     - Rakefile
@@ -5,5 +6,9 @@ AllCops:
     - lib/**/*.rake
   Exclude:
     - db/schema.rb
+    - 'vendor/**/*'
 Rails:
   Enabled: true
+
+Style/TrailingCommaInLiteral:
+  Enabled: false
