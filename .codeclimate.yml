@@ -4,8 +4,6 @@ engines:
     enabled: true
   bundler-audit:
     enabled: true
-  csslint:
-    enabled: true
   coffeelint:
     enabled: true
   duplication:
@@ -21,6 +19,8 @@ engines:
   fixme:
     enabled: true
   rubocop:
+    enabled: true
+  scss-lint:
     enabled: true
 ratings:
   paths:
