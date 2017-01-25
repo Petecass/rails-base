@@ -13,11 +13,11 @@ module OmniauthMacros
         first_name: 'Han',
         last_name: 'Solo',
         email: ('c3po@therepublic.com' if email),
-        image: 'mock_user_thumbnail_url'
+        image: 'mock_user_thumbnail_url',
       },
       credentials: {
         token: 'mock_token',
-        secret: 'mock_secret'
+        secret: 'mock_secret',
       },
       extra: {
         raw_info: {
@@ -33,9 +33,9 @@ module OmniauthMacros
           timezone: -8,
           locale: 'en_US',
           verified: true,
-          updated_time: '2011-11-11T06:21:03+0000'
-        }
-      }
+          updated_time: '2011-11-11T06:21:03+0000',
+        },
+      },
     }.reject { |_, v| v.nil? }
   end
 

@@ -19,8 +19,6 @@ class User < ApplicationRecord
 
     # If a signed_in_resource is provided it always overrides the existing user
     # to prevent the identity being locked with accidentally created accounts.
-    # Note that this may leave zombie accounts (with no associated identity) which
-    # can be cleaned up at a later date.
     user = signed_in_resource ? signed_in_resource : identity.user
 
     # Create the user if needed
@@ -28,11 +26,7 @@ class User < ApplicationRecord
       user = self.find_or_create_by_email(auth)
     end
 
-    # Associate the identity with the user if needed
-    if identity.user != user
-      identity.user = user
-      identity.save!
-    end
+    associate_identity(identity, user)
     user
   end
 
@@ -41,6 +35,12 @@ class User < ApplicationRecord
   end
 
   private
+
+    def associate_identity(identity, user)
+      return unless identity.user != user
+      identity.user = user
+      identity.save!
+    end
 
     def self.find_or_create_by_email(auth)
       # Get the existing user by email if the provider gives us a verified email.

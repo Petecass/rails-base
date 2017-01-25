@@ -9,7 +9,7 @@ module ApplicationHelper
   def main_nav_link(text, path, options = {})
     active = current_page?(path) ? 'active' : ''
     default_options = {
-      class: "item #{active}"
+      class: "item #{active}",
     }.merge(options)
 
     link_to(text, path, default_options)
@@ -37,7 +37,7 @@ module ApplicationHelper
     provider_name = provider.downcase.to_s.split('_')[0]
     options = {
       class: "#{provider_name} ui button plus fluid",
-      id: "#{provider_name}Button"
+      id: "#{provider_name}Button",
     }
 
     link_to(omniauth_authorize_path(resource_name, provider), options) do
