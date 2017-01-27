@@ -1,6 +1,7 @@
 AllCops:
   DisplayCopNames: true
   Exclude:
+    - 'vendor/**/*'
     - 'db/**/*'
     - '**/bin/spring'
     - 'config/**/*'
