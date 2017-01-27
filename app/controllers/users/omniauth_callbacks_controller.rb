@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  # rubocop:disable Metrics/MethodLength
   def self.provides_callback_for(provider)
     class_eval %{
       def #{provider}
@@ -16,7 +15,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       end
     }
   end
-  # rubocop:enable Metrics/MethodLength
 
   User.omniauth_providers.each do |provider|
     provides_callback_for provider

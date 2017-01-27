@@ -1,8 +1,11 @@
 AllCops:
   DisplayCopNames: true
   Exclude:
-    - '**/db/**'
+    - 'db/**/*'
     - '**/bin/spring'
+    - 'config/**/*'
+    - 'Guardfile'
+    - 'spec/i18n_spec.rb'
 Rails:
   Enabled: true
 Documentation:
@@ -14,6 +17,9 @@ Metrics/AbcSize:
   Exclude:
     - '**/spec/**/*spec.rb'
   Max: 30
+Metrics/BlockLength:
+  Exclude:
+    - '**/spec/**/*spec.rb'
 Metrics/MethodLength:
   Exclude:
     - '**/spec/**/*spec.rb'
@@ -22,7 +28,10 @@ Metrics/LineLength:
   Exclude:
     - '**/config/**/*.rb'
     - '**/db/seeds.rb'
+  Max: 120
 Style/ClassAndModuleChildren:
   Enabled: false
 Style/BlockComments:
+  Enabled: false
+Style/TrailingCommaInLiteral:
   Enabled: false

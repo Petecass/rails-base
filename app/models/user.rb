@@ -31,9 +31,7 @@ class User < ApplicationRecord
       user = signed_in_resource ? signed_in_resource : identity.user
 
       # Create the user if needed
-      if user.nil?
-        user = find_or_create_by_email(auth)
-      end
+      user = find_or_create_by_email(auth) if user.nil?
 
       associate_identity(identity, user)
       user

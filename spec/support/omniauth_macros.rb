@@ -5,6 +5,7 @@ module OmniauthMacros
     OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(data(email))
   end
 
+  # rubocop:disable Metrics/MethodLength
   def data(email = true)
     {
       provider: 'facebook',
@@ -39,6 +40,7 @@ module OmniauthMacros
       },
     }.reject { |_, v| v.nil? }
   end
+  # rubocop:enable Metrics/MethodLength
 
   def submit
     find('input[type=submit]').click
