@@ -42,6 +42,7 @@ group :development, :test do
   gem 'dotenv-rails',       '~> 2.1.2'
   gem 'factory_girl_rails', '~> 4.8.0'
   gem 'faker',              '~> 1.7.2'
+  gem 'growl'
   gem 'guard-rspec'
   gem 'rspec-rails'
   gem 'rubocop',            '~> 0.47.1', require: false

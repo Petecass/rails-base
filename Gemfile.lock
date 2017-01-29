@@ -111,6 +111,7 @@ GEM
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    growl (1.0.3)
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -375,6 +376,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.1.2)
   factory_girl_rails (~> 4.8.0)
   faker (~> 1.7.2)
+  growl
   guard-livereload
   guard-rspec
   i18n-tasks (~> 0.9.9)
