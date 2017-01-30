@@ -39,10 +39,11 @@ module ApplicationHelper
       class: "#{provider_name} ui button plus fluid",
       id: "#{provider_name}Button",
     }
-
+    # rubocop: disable Rails/OutputSafety
     link_to(omniauth_authorize_path(resource_name, provider), options) do
       "#{content_tag(:i, '', class: "#{provider_name} plus icon")}
-        #{provider_name.capitalize}"
+        #{provider_name.capitalize}".html_safe
     end
+    # rubocop: enable Rails/OutputSafety
   end
 end

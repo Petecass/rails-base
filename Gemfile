@@ -26,7 +26,7 @@ gem 'omniauth', '~> 1.3.2'
 # config/initializers/devise.rb and also add the provider to the omniauthable
 # array on the user model
 gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
+# gem 'omniauth-google-oauth2'
 # gem 'omniauth-github'
 # gem 'omniauth-twitter'
 # gem 'omniauth-linkedin'

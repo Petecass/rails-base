@@ -273,6 +273,6 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   config.omniauth :facebook, ENV['FB_KEY'], ENV['FB_SECRET']
-  config.omniauth :google_oauth2,  ENV['GOOGLE_OMNIAUTH_KEY'], ENV['GOOGLE_OMNIAUTH_SECRET']
+  # config.omniauth :google_oauth2,  ENV['GOOGLE_OMNIAUTH_KEY'], ENV['GOOGLE_OMNIAUTH_SECRET']
   # config.omniauth :linked_in,  ENV['LI_KEY'], ENV['LI_SECRET']
 end
