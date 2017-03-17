@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 
 gem 'rails',   '~> 5.0.2'
 
+gem 'pg'
 gem 'puma',    '~> 3.8.2'
-gem 'sqlite3', '1.3.13'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder',     '~> 2.6.3'
@@ -20,7 +20,7 @@ gem 'uglifier',     '~> 3.1.7'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'devise', '~> 4.2.1'
+gem 'devise',   '~> 4.2.1'
 gem 'omniauth', '~> 1.6.1'
 # Choose your Oauth provider(s), You will need to add the key and secret to
 # config/initializers/devise.rb and also add the provider to the omniauthable
@@ -35,7 +35,7 @@ gem 'autoprefixer-rails', '~> 6.7.7'
 gem 'i18n-tasks',         '~> 0.9.12'
 gem 'meta-tags',          '~> 2.4.0'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
-gem 'slim-rails', '~> 3.1.2'
+gem 'slim-rails',         '~> 3.1.2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
