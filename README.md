@@ -5,25 +5,18 @@
 [![Test Coverage](https://codeclimate.com/github/Petecass/rails-base/badges/coverage.svg)](https://codeclimate.com/github/Petecass/rails-base/coverage)
 [![Issue Count](https://codeclimate.com/github/Petecass/rails-base/badges/issue_count.svg)](https://codeclimate.com/github/Petecass/rails-base)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a basic starting point for most Rails 5 applications.
 
-Things you may want to cover:
+Comes setup with a PostgreSQL db, user authentication with devise and omniauth setup my default.
 
-* Ruby version
+Other features include a solid Sass architecture, Semantic UI as a front-end frame work for styling, slim templating for views and mailers, default meta tags setup for site title, description etc and nested layouts.
 
-* System dependencies
+To setup:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `bundle` to install all gems
+- `bundle exec rails db:create` to create the database. note you will need to have Postgres installed on your machine.
+- `bundle exec rails db:schema:load`
+- `bundle exec rails s` to run the server
+- you can also use guard `bundle exec guard` for automated testing and live reloading of assets.
+- `bundle exec rspec spec` to run all specs.
+- `bundle exec rake rubocop` to lint all your ruby code.
